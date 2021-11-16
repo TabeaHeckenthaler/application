@@ -17,12 +17,10 @@ def main():
     # mark_string = single_student(df.loc[index])
     return render_template("index.html")
 
-# @app.route("/")
-# def main():
-#     df = create_df(STUDENTS_DIRECTORY)
-#     index = find_indices()
-#     mark_string = single_student(df.loc[index])
-#     return markdown.markdown(mark_string)
+
+@app.route("/echo", methods=['POST'])
+def echo():
+    return render_template('index.html', text=request.form.get('text', ''))
 
 
 def find_indices():
