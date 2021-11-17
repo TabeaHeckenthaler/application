@@ -1,6 +1,12 @@
-<form action="/echo" method="POST">
-<input name="text">
-<input type="submit" value="Echo">
+<h1> Tabea's Search Machine </h1>
+
+<form action="/search_result" method="POST">
+    <input name="search_word" placeholder="">
+    <input type="submit" value="Search">
 </form>
 
-You said: <b>{{ text }}</b>
+<table>
+    {% for student in students %}
+        <tr><td><a href='details/{{student}}'> {{student}}</a></td></tr>
+    {% endfor %}
+</table>

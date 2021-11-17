@@ -1,0 +1,7 @@
+<h1>{{ student.name }}</h1>
+
+<table>
+  {% for key in student.keys() %}
+     <tr><td>{{ key }}:</td><td>{{ student[key] }}</td></tr>
+  {% endfor %}
+</table>
