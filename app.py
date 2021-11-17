@@ -16,6 +16,9 @@ def main() -> str:
 
 @app.route("/search_result", methods=['POST'])
 def search_result() -> str:
+    """
+    :return: string of html which gives a search bar.
+    """
     indices = find_indices(str(request.form.get('search_word', '')))
     return render_template('index.html', students=[df.loc[index]['name'] for index in indices])
 
